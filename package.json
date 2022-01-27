@@ -6,7 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "prepare": "yarn run build",
-    "prepublishOnly": "yarn run test && yarn run lint",
+    "preflight": "yarn run test && yarn run lint",
+    "prepublishOnly": "yarn preflight",
     "preversion": "yarn run lint",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
@@ -38,6 +39,7 @@
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-flowtype": "8.0.3",
+    "husky": "^7.0.4",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.3",
